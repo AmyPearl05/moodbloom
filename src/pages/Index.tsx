@@ -3,10 +3,15 @@ import { MoodSelector } from '@/components/MoodSelector';
 import { WellnessDashboard } from '@/components/WellnessDashboard';
 import { AIWellnessBuddy } from '@/components/AIWellnessBuddy';
 import { WellnessHero } from '@/components/WellnessHero';
+import MiniGames from '@/components/MiniGames';
+import BadgesSystem from '@/components/BadgesSystem';
+import MiniActivities from '@/components/MiniActivities';
+import TherapyBot from '@/components/TherapyBot';
+import PeerSupport from '@/components/PeerSupport';
 import { Card } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Calendar, MessageCircle, TrendingUp, Settings, Sparkles } from 'lucide-react';
+import { Calendar, MessageCircle, TrendingUp, Settings, Sparkles, Gamepad2, Award, Activity, Users, Palette } from 'lucide-react';
 
 interface MoodEntry {
   date: string;
@@ -91,18 +96,38 @@ const Index = () => {
 
         {/* Main Content */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="space-y-6">
-          <TabsList className="grid w-full grid-cols-3 lg:w-auto lg:grid-cols-3 bg-card/50 backdrop-blur-sm rounded-2xl p-1">
-            <TabsTrigger value="check-in" className="rounded-xl flex items-center gap-2">
+          <TabsList className="grid w-full grid-cols-4 lg:grid-cols-8 bg-card/50 backdrop-blur-sm rounded-2xl p-1 overflow-x-auto">
+            <TabsTrigger value="check-in" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
               <Calendar className="h-4 w-4" />
-              <span className="hidden sm:inline">Mood Check-in</span>
+              <span className="hidden sm:inline">Check-in</span>
             </TabsTrigger>
-            <TabsTrigger value="dashboard" className="rounded-xl flex items-center gap-2">
+            <TabsTrigger value="dashboard" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
               <TrendingUp className="h-4 w-4" />
               <span className="hidden sm:inline">Dashboard</span>
             </TabsTrigger>
-            <TabsTrigger value="buddy" className="rounded-xl flex items-center gap-2">
+            <TabsTrigger value="games" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
+              <Gamepad2 className="h-4 w-4" />
+              <span className="hidden sm:inline">Games</span>
+            </TabsTrigger>
+            <TabsTrigger value="badges" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
+              <Award className="h-4 w-4" />
+              <span className="hidden sm:inline">Badges</span>
+            </TabsTrigger>
+            <TabsTrigger value="activities" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
+              <Activity className="h-4 w-4" />
+              <span className="hidden sm:inline">Activities</span>
+            </TabsTrigger>
+            <TabsTrigger value="therapy" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
               <MessageCircle className="h-4 w-4" />
-              <span className="hidden sm:inline">AI Buddy</span>
+              <span className="hidden sm:inline">Therapy</span>
+            </TabsTrigger>
+            <TabsTrigger value="peer" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
+              <Users className="h-4 w-4" />
+              <span className="hidden sm:inline">Community</span>
+            </TabsTrigger>
+            <TabsTrigger value="buddy" className="rounded-xl flex items-center gap-1 text-xs lg:text-sm">
+              <Sparkles className="h-4 w-4" />
+              <span className="hidden sm:inline">Luna</span>
             </TabsTrigger>
           </TabsList>
 
@@ -134,6 +159,42 @@ const Index = () => {
               currentStreak={currentStreak}
               weeklyScore={weeklyScore}
             />
+          </TabsContent>
+
+          <TabsContent value="games" className="space-y-6">
+            <div className="max-w-4xl mx-auto">
+              <MiniGames />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="badges" className="space-y-6">
+            <div className="max-w-6xl mx-auto">
+              <BadgesSystem 
+                currentStreak={currentStreak}
+                moodEntries={moodEntries}
+              />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="activities" className="space-y-6">
+            <div className="max-w-4xl mx-auto">
+              <MiniActivities />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="therapy" className="space-y-6">
+            <div className="max-w-4xl mx-auto">
+              <TherapyBot 
+                recentMood={recentMood}
+                isInCrisis={['depressed', 'heartbroken', 'crisis'].includes(recentMood || '')}
+              />
+            </div>
+          </TabsContent>
+
+          <TabsContent value="peer" className="space-y-6">
+            <div className="max-w-4xl mx-auto">
+              <PeerSupport />
+            </div>
           </TabsContent>
 
           <TabsContent value="buddy" className="space-y-6">
