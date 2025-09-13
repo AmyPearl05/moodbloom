@@ -18,22 +18,30 @@
     --popover: 0 0% 100%;
     --popover-foreground: 240 10% 15%;
 
-    /* Primary - Warm wellness purple */
-    --primary: 280 65% 60%;
+    /* Primary - Emerald wellness green */
+    --primary: 150 85% 40%;
     --primary-foreground: 0 0% 98%;
-    --primary-soft: 285 55% 85%;
+    --primary-soft: 150 40% 85%;
 
-    /* Secondary - Calming teal */
-    --secondary: 180 65% 85%;
-    --secondary-foreground: 180 70% 25%;
+    /* Secondary - Warm ivory */
+    --secondary: 45 20% 92%;
+    --secondary-foreground: 45 15% 25%;
 
-    /* Accent - Energetic coral */
-    --accent: 15 85% 70%;
-    --accent-foreground: 0 0% 98%;
+    /* Accent - Luxurious gold */
+    --accent: 45 90% 60%;
+    --accent-foreground: 45 90% 15%;
 
-    /* Success - Fresh green for achievements */
-    --success: 140 60% 55%;
+    /* Success - Deep emerald for achievements */
+    --success: 160 80% 35%;
     --success-foreground: 0 0% 98%;
+
+    /* Crisis support - Calming lavender */
+    --crisis: 260 40% 70%;
+    --crisis-foreground: 0 0% 98%;
+
+    /* Mental health - Soft sage */
+    --mental-health: 120 25% 60%;
+    --mental-health-foreground: 0 0% 98%;
 
     /* Muted tones */
     --muted: 240 15% 95%;
@@ -50,17 +58,19 @@
     --input: 240 15% 92%;
     --ring: 280 65% 60%;
 
-    /* Gradients for mental wellness vibes */
-    --gradient-wellness: linear-gradient(135deg, hsl(280 65% 60%), hsl(320 70% 65%));
-    --gradient-calm: linear-gradient(135deg, hsl(180 65% 85%), hsl(200 60% 80%));
-    --gradient-energy: linear-gradient(135deg, hsl(15 85% 70%), hsl(45 95% 65%));
-    --gradient-success: linear-gradient(135deg, hsl(140 60% 55%), hsl(160 55% 60%));
-    --gradient-hero: linear-gradient(135deg, hsl(280 65% 60%) 0%, hsl(320 70% 65%) 50%, hsl(15 85% 70%) 100%);
+    /* Gradients for mental wellness vibes - Emerald & Gold theme */
+    --gradient-wellness: linear-gradient(135deg, hsl(150 85% 40%), hsl(160 80% 50%));
+    --gradient-calm: linear-gradient(135deg, hsl(45 20% 92%), hsl(50 25% 88%));
+    --gradient-energy: linear-gradient(135deg, hsl(45 90% 60%), hsl(40 95% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(160 80% 35%), hsl(150 75% 45%));
+    --gradient-crisis: linear-gradient(135deg, hsl(260 40% 70%), hsl(280 35% 75%));
+    --gradient-hero: linear-gradient(135deg, hsl(150 85% 40%) 0%, hsl(45 90% 60%) 50%, hsl(160 80% 35%) 100%);
 
-    /* Soft shadows for depth */
-    --shadow-soft: 0 4px 20px hsl(280 65% 60% / 0.1);
-    --shadow-glow: 0 0 40px hsl(280 65% 60% / 0.15);
+    /* Soft shadows for depth - Emerald theme */
+    --shadow-soft: 0 4px 20px hsl(150 85% 40% / 0.1);
+    --shadow-glow: 0 0 40px hsl(150 85% 40% / 0.15);
     --shadow-card: 0 2px 16px hsl(240 10% 15% / 0.08);
+    --shadow-gold: 0 8px 32px hsl(45 90% 60% / 0.2);
 
     /* Border radius system */
     --radius: 1rem;
@@ -184,6 +194,10 @@
 
   .gradient-success {
     background: var(--gradient-success);
+  }
+
+  .gradient-crisis {
+    background: var(--gradient-crisis);
   }
 
   .gradient-hero {

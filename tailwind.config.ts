@@ -36,6 +36,14 @@ export default {
           DEFAULT: "hsl(var(--success))",
           foreground: "hsl(var(--success-foreground))",
         },
+        crisis: {
+          DEFAULT: "hsl(var(--crisis))",
+          foreground: "hsl(var(--crisis-foreground))",
+        },
+        "mental-health": {
+          DEFAULT: "hsl(var(--mental-health))",
+          foreground: "hsl(var(--mental-health-foreground))",
+        },
         warning: {
           DEFAULT: "hsl(var(--warning))",
           foreground: "hsl(var(--warning-foreground))",
