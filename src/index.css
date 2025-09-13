@@ -2,41 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
-*/
+/* Youth-Centric Mental Wellness Design System - All colors MUST be HSL */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Core background & text */
+    --background: 320 40% 98%;
+    --foreground: 240 10% 15%;
 
+    /* Card system */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 240 10% 15%;
 
+    /* Popover system */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 240 10% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primary - Warm wellness purple */
+    --primary: 280 65% 60%;
+    --primary-foreground: 0 0% 98%;
+    --primary-soft: 285 55% 85%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secondary - Calming teal */
+    --secondary: 180 65% 85%;
+    --secondary-foreground: 180 70% 25%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Accent - Energetic coral */
+    --accent: 15 85% 70%;
+    --accent-foreground: 0 0% 98%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Success - Fresh green for achievements */
+    --success: 140 60% 55%;
+    --success-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    /* Muted tones */
+    --muted: 240 15% 95%;
+    --muted-foreground: 240 10% 50%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Warning & destructive */
+    --warning: 45 95% 65%;
+    --warning-foreground: 45 95% 15%;
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 0 0% 98%;
 
-    --radius: 0.5rem;
+    /* Borders & inputs */
+    --border: 240 15% 88%;
+    --input: 240 15% 92%;
+    --ring: 280 65% 60%;
+
+    /* Gradients for mental wellness vibes */
+    --gradient-wellness: linear-gradient(135deg, hsl(280 65% 60%), hsl(320 70% 65%));
+    --gradient-calm: linear-gradient(135deg, hsl(180 65% 85%), hsl(200 60% 80%));
+    --gradient-energy: linear-gradient(135deg, hsl(15 85% 70%), hsl(45 95% 65%));
+    --gradient-success: linear-gradient(135deg, hsl(140 60% 55%), hsl(160 55% 60%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 65% 60%) 0%, hsl(320 70% 65%) 50%, hsl(15 85% 70%) 100%);
+
+    /* Soft shadows for depth */
+    --shadow-soft: 0 4px 20px hsl(280 65% 60% / 0.1);
+    --shadow-glow: 0 0 40px hsl(280 65% 60% / 0.15);
+    --shadow-card: 0 2px 16px hsl(240 10% 15% / 0.08);
+
+    /* Border radius system */
+    --radius: 1rem;
+    --radius-lg: 1.5rem;
+    --radius-full: 9999px;
+
+    /* Animation variables */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     --sidebar-background: 0 0% 98%;
 
@@ -56,41 +89,52 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
+    /* Dark mode for wellness app */
+    --background: 240 15% 8%;
+    --foreground: 280 35% 90%;
 
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
+    --card: 240 15% 12%;
+    --card-foreground: 280 35% 90%;
 
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
+    --popover: 240 15% 12%;
+    --popover-foreground: 280 35% 90%;
 
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
+    --primary: 285 70% 70%;
+    --primary-foreground: 240 15% 8%;
+    --primary-soft: 285 40% 25%;
 
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
+    --secondary: 180 35% 25%;
+    --secondary-foreground: 180 65% 85%;
 
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 15 70% 60%;
+    --accent-foreground: 0 0% 98%;
 
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
+    --success: 140 50% 45%;
+    --success-foreground: 0 0% 98%;
 
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 10% 70%;
 
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --sidebar-background: 240 5.9% 10%;
-    --sidebar-foreground: 240 4.8% 95.9%;
-    --sidebar-primary: 224.3 76.3% 48%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 240 3.7% 15.9%;
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-    --sidebar-border: 240 3.7% 15.9%;
-    --sidebar-ring: 217.2 91.2% 59.8%;
+    --warning: 45 85% 55%;
+    --warning-foreground: 45 95% 15%;
+    --destructive: 0 60% 50%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 16%;
+    --ring: 285 70% 70%;
+
+    /* Dark mode gradients */
+    --gradient-wellness: linear-gradient(135deg, hsl(285 70% 70%), hsl(320 65% 60%));
+    --gradient-calm: linear-gradient(135deg, hsl(180 35% 25%), hsl(200 40% 30%));
+    --gradient-energy: linear-gradient(135deg, hsl(15 70% 60%), hsl(45 85% 55%));
+    --gradient-success: linear-gradient(135deg, hsl(140 50% 45%), hsl(160 45% 50%));
+    --gradient-hero: linear-gradient(135deg, hsl(285 70% 70%) 0%, hsl(320 65% 60%) 50%, hsl(15 70% 60%) 100%);
+
+    /* Dark shadows */
+    --shadow-soft: 0 4px 20px hsl(0 0% 0% / 0.4);
+    --shadow-glow: 0 0 40px hsl(285 70% 70% / 0.2);
+    --shadow-card: 0 2px 16px hsl(0 0% 0% / 0.3);
   }
 }
 
@@ -100,6 +144,148 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-medium;
+    transition: var(--transition-smooth);
+  }
+}
+
+@layer components {
+  /* Wellness-specific component classes */
+  .mood-emoji {
+    @apply text-4xl cursor-pointer transition-all duration-200 hover:scale-110 active:scale-95;
+  }
+
+  .mood-emoji.selected {
+    @apply scale-125 drop-shadow-lg;
+  }
+
+  .wellness-card {
+    @apply bg-card/80 backdrop-blur-sm rounded-2xl p-6 border border-border/50;
+    box-shadow: var(--shadow-card);
+    transition: var(--transition-smooth);
+  }
+
+  .wellness-card:hover {
+    @apply transform translate-y-[-4px];
+    box-shadow: var(--shadow-soft);
+  }
+
+  .gradient-wellness {
+    background: var(--gradient-wellness);
+  }
+
+  .gradient-calm {
+    background: var(--gradient-calm);
+  }
+
+  .gradient-energy {
+    background: var(--gradient-energy);
+  }
+
+  .gradient-success {
+    background: var(--gradient-success);
+  }
+
+  .gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .btn-wellness {
+    @apply bg-primary text-primary-foreground px-6 py-3 rounded-full font-semibold;
+    background: var(--gradient-wellness);
+    box-shadow: var(--shadow-soft);
+    transition: var(--transition-smooth);
+  }
+
+  .btn-wellness:hover {
+    @apply transform translate-y-[-2px] scale-105;
+    box-shadow: var(--shadow-glow);
+  }
+
+  .progress-ring {
+    @apply transform rotate-[-90deg];
+    transition: var(--transition-smooth);
+  }
+
+  .streak-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-sm font-medium;
+    background: var(--gradient-success);
+    color: hsl(var(--success-foreground));
+    animation: pulse 2s infinite;
+  }
+
+  .floating-animation {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .bounce-in {
+    animation: bounceIn 0.6s var(--bounce);
+  }
+
+  .slide-up {
+    animation: slideUp 0.4s ease-out;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: var(--gradient-wellness);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .text-gradient-energy {
+    background: var(--gradient-energy);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* Keyframe animations for youth engagement */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.3) rotate(-10deg);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.05) rotate(5deg);
+  }
+  70% {
+    transform: scale(0.9) rotate(-2deg);
+  }
+  100% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
   }
 }
